@@ -1,3 +1,7 @@
-const catMe = require('cat-me');
+const cowsay = require('cowsay')
 
-console.log(catMe())
+console.log(cowsay.say({
+    text : "I am here",
+    e : "00",
+    T : "v"
+}))
