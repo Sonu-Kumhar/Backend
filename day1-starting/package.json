@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "cat-me": "^1.0.3",
-    "cowsay": "^1.6.0"
+    "cowsay": "^1.6.0",
+    "lolcatjs": "^2.4.3"
   }
 }
