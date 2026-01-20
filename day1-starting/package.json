@@ -2,6 +2,7 @@
   "dependencies": {
     "cat-me": "^1.0.3",
     "cowsay": "^1.6.0",
+    "figlet": "^1.9.4",
     "lolcatjs": "^2.4.3"
   }
 }
