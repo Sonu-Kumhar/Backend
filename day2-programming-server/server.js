@@ -1,4 +1,12 @@
 const express = require('express')
 const app = express() //creating server instance
 
+app.get('/', (req,res)=>{
+    res.send("Hello From Server")
+})
+
+app.get('/about', (req, res)=>{
+    res.send("This is Server, created by Sonu Kumhar")
+})
+
 app.listen(3000); //server start karna
