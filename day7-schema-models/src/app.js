@@ -22,4 +22,17 @@ app.post("/notes",async (req, res)=>{
     })
 })
 
+/**
+ * Get Request
+ * fetch all notes data
+ */
+
+app.get("/notes", async (req, res)=>{
+   const notes =  await notesModel.find()
+   res.status(200).json({
+    message:"All notes",
+    notes
+   })
+})
+
 module.exports = app;
