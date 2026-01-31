@@ -3,6 +3,7 @@
  * 2. server config karna
  */
 
+
 const express = require("express")
 const notesModel = require("./models/notes.model")
 
