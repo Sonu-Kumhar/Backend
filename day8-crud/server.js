@@ -1,0 +1,11 @@
+/**
+ * 1. server start karna
+ */
+
+
+const app = require("./src/app")
+
+
+app.listen(3000, ()=>{
+    console.log("server is running on port number 3000");
+})
