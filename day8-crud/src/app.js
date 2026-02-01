@@ -30,7 +30,20 @@ app.post("/api/notes", async (req, res)=>{
         message:"note created successfully",
         note
     })
+})
 
+/**
+ * GET /api/notes
+ * Fetch all the notes from the mongoDB
+ */
+
+app.get("/api/notes", async (req, res)=>{
+    const notes = await noteModel.find();
+
+    res.status(200).json({
+        message:"Notes fetched successfully.",
+        notes
+    })
 })
 
 module.exports = app;
