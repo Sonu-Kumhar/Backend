@@ -11,6 +11,7 @@ app.get("/",(req, res)=>{
 })
 
 app.post("/api/notes",async (req, res)=>{
+    console.log("request received", req.body)
     const {title, description} = req.body;
 
     const note = await noteModel.create({
@@ -28,6 +29,17 @@ app.get("/api/notes", async (req, res)=>{
     res.status(200).json({
         message:"Fetched all notes",
         notes
+    })
+})
+
+app.delete("/api/notes/:id", async (req, res)=>{
+    const id = req.params.id;
+    console.log(id);
+
+    await noteModel.findByIdAndDelete(id);
+
+    res.status(200).json({
+        message:"Note deleted successfully."
     })
 })
 
