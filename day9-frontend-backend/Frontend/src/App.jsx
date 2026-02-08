@@ -7,25 +7,25 @@ const App = () => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
 
-  const notesData1 = [
-    {
-      title: "Introduction",
-      description: "This section gives an overview of the topic."
-    },
-    {
-      title: "Concept",
-      description: "Explains the core idea in simple terms."
-    },
-    {
-      title: "Example",
-      description: "Provides a practical example for better understanding."
-    },
-    {
-      title: "Summary",
-      description: "Quick revision of all important points."
-    }
-  ];
-  const [notesData, setnotesData] = useState(notesData1)
+  // const notesData1 = [
+  //   {
+  //     title: "Introduction",
+  //     description: "This section gives an overview of the topic."
+  //   },
+  //   {
+  //     title: "Concept",
+  //     description: "Explains the core idea in simple terms."
+  //   },
+  //   {
+  //     title: "Example",
+  //     description: "Provides a practical example for better understanding."
+  //   },
+  //   {
+  //     title: "Summary",
+  //     description: "Quick revision of all important points."
+  //   }
+  // ];
+  const [notesData, setnotesData] = useState([])
 
   function getAllData() {
     axios.get("http://localhost:3000/api/notes")
@@ -53,6 +53,16 @@ const App = () => {
 
     setTitle("")
     setDescription("")
+  }
+
+  function deleteNote(id){
+    console.log("note deleted with id", id)
+
+    axios.delete(`http://localhost:3000/api/notes/${id}`)
+    .then((res)=>{
+      console.log(res.data);
+      getAllData();
+    })
   }
 
 
@@ -94,6 +104,11 @@ const App = () => {
             return <div key={index} className='note'>
               <h2>{note.title}</h2>
               <p>{note.description}</p>
+              <button
+                onClick={()=>{deleteNote(note._id)}}
+               className='delete'
+               >Delete
+               </button>
             </div>
           })
         }

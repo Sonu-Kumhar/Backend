@@ -80,3 +80,10 @@ button{
 button:active{
   transform: scale(0.95);
 }
+
+.delete{
+  margin-top: 1rem;
+  color: white;
+  font-weight: 500;
+  background-color: #ff3737;
+}
