@@ -87,3 +87,10 @@ button:active{
   font-weight: 500;
   background-color: #ff3737;
 }
+
+.edit{
+  margin-left: 0.5rem;
+  font-weight: 500;
+  color: white;
+  background-color: #5ada15;
+}
