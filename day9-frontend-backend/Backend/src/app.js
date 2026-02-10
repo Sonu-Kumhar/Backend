@@ -11,7 +11,7 @@ app.get("/",(req, res)=>{
 })
 
 app.post("/api/notes",async (req, res)=>{
-    console.log("request received", req.body)
+    // console.log("request received", req.body)
     const {title, description} = req.body;
 
     const note = await noteModel.create({
@@ -34,7 +34,7 @@ app.get("/api/notes", async (req, res)=>{
 
 app.delete("/api/notes/:id", async (req, res)=>{
     const id = req.params.id;
-    console.log(id);
+    // console.log(id);
 
     await noteModel.findByIdAndDelete(id);
 
@@ -43,10 +43,12 @@ app.delete("/api/notes/:id", async (req, res)=>{
     })
 })
 
-app.patch("/api/notes/:id", async (req, res)=>{
+app.put("/api/notes/:id", async (req, res)=>{
+    console.log("req.body:", req.body);
     const id = req.params.id;
 
     await noteModel.findByIdAndUpdate(id, {
+        title : req.body.title,
         description : req.body.description
     })
 
