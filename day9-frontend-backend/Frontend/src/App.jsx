@@ -56,7 +56,8 @@ const App = () => {
         })
     }
     else if (editId !== null) {
-      axios.patch(`http://localhost:3000/api/notes/${editId}`, {
+      axios.put(`http://localhost:3000/api/notes/${editId}`, {
+        title,
         description
       })
         .then((res) => {
