@@ -4,6 +4,9 @@ const cors = require("cors")
 const app = express();
 app.use(express.json())
 app.use(cors())
+
+app.use(express.static("./public")) 
+
 const noteModel = require("./models/note.model")
 
 app.get("/",(req, res)=>{
