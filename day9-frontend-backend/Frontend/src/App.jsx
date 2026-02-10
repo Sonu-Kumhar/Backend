@@ -29,7 +29,7 @@ const App = () => {
   const [notesData, setnotesData] = useState([])
 
   function getAllData() {
-    axios.get("http://localhost:3000/api/notes")
+    axios.get("https://note-app-sd7x.onrender.com/api/notes")
       .then(res => {
         // console.log(res.data.notes)
         setnotesData(res.data.notes)
@@ -47,7 +47,7 @@ const App = () => {
     // console.log(title, description)
 
     if (editId === null) {
-      axios.post("http://localhost:3000/api/notes", {
+      axios.post("https://note-app-sd7x.onrender.com/api/notes", {
         title, description
       })
         .then((res) => {
@@ -56,7 +56,7 @@ const App = () => {
         })
     }
     else if (editId !== null) {
-      axios.put(`http://localhost:3000/api/notes/${editId}`, {
+      axios.put(`https://note-app-sd7x.onrender.com/api/notes/${editId}`, {
         title,
         description
       })
@@ -75,7 +75,7 @@ const App = () => {
   function deleteNote(id) {
     console.log("note deleted with id", id)
 
-    axios.delete(`http://localhost:3000/api/notes/${id}`)
+    axios.delete(`https://note-app-sd7x.onrender.com/api/notes/${id}`)
       .then((res) => {
         console.log(res.data);
         getAllData();
