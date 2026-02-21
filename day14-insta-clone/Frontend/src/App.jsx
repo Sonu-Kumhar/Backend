@@ -1,6 +1,6 @@
 import {router} from "./AppRoutes"
 import { RouterProvider } from "react-router"
-import "./style.scss"
+import "./features/shared/global.scss"
 import { AuthProvider } from "./features/auth/auth.context"
 
 const App = () => {
@@ -12,3 +12,14 @@ const App = () => {
 }
 
 export default App
+
+
+/**
+ * UI layer
+ *   |
+ * Hooks layer
+ *    |
+ * State layer
+ *    |
+ * API layer
+ */

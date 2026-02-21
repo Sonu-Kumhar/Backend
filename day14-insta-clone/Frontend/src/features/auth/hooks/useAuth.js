@@ -1,9 +1,29 @@
-import { useContext } from "react";
-
+import { useContext } from "react";  //hook layer
 import { AuthContext } from "../auth.context";
+import {login, register} from "../services/auth.api"
 
-export function useAuth(){
+export const useAuth = () => {
     const context = useContext(AuthContext)
 
-    return context
+    const {user, setUser, loading, setLoading} = context
+
+    const handleLogin = async (username, password) => {
+        setLoading(true)
+        const response = await login(username, password)
+        console.log(response)
+        setUser(response.user)
+        setLoading(false)
+    }
+
+    const handleRegister = async (username, email, password)=>{
+        setLoading(true)
+        const response= await register(username, email, password)
+        console.log(response)
+        setUser(response.user)
+        setLoading(false)
+    }
+
+    return {
+        user, loading, handleLogin, handleRegister
+    }
 }
