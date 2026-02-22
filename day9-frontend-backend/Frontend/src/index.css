@@ -35,7 +35,7 @@ body{
   text-align: center;
   padding-inline: 2rem;
   padding-block: 1rem;
-  width: 25%;
+  min-width: 25%;
   height: 25%;
   background-color: #424242;
   border-radius: 2rem;
