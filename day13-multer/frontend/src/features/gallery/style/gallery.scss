@@ -1,0 +1,27 @@
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .gallery-container {
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            input {
+                padding-inline: 1rem;
+                padding-block: 0.5rem;
+
+
+            }
+
+            .inp {
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}
